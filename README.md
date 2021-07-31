@@ -18,14 +18,9 @@ This work was funded by Focused Research Award from Google.
 
 Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and evaluation.
 
-### Prerequisites
-For using our framework, you need to have the following installed on you machine:
-
-1. docker (https://www.docker.com/)
-2. nvidia-docker (https://github.com/NVIDIA/nvidia-docker)
-
 ### Data Preparation
-The models are trained on our own dataset generated from Replica, from which an example scene is provided, and on ScanNet. 
+The models are trained on our own dataset generated from Replica, from which an example scene is provided, and on ScanNet.
+To get our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
 
 ### Installation
 
@@ -35,7 +30,6 @@ To install our framework, you can use a conda environment.
 
 <pre><code>git clone https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic.git
 git submodule update --init --recursive
-
 </code></pre>
 
 **Create the Anaconda environment**
@@ -44,8 +38,7 @@ conda activate segfusion
 </code></pre>
 
 You may have to manually install dependencies in *deps/* by cd-ing into the package with the *setup.py* file and then running:
-<pre><code>
-pip install .
+<pre><code>pip install .
 </code></pre>
 
 ### Training
@@ -53,8 +46,8 @@ Once the environment is ready, you can first train the segmentation network (2 s
 
 **Train Segmentation Network**
 <pre><code>python train_segmentation.py --config configs/segmentation/replica_rgb.yaml
-<pre><code>python train_segmentation.py --config configs/segmentation/replica_depth.yaml
-<pre><code>python train_segmentation.py --config configs/segmentation/replica_multi.yaml
+python train_segmentation.py --config configs/segmentation/replica_depth.yaml
+python train_segmentation.py --config configs/segmentation/replica_multi.yaml
 </code></pre>
 
 **Train Fusion Network**
@@ -73,7 +66,7 @@ We provide pretrained models for the multimodal AdapNet with RGB and ToF input m
 
 **Test Fusion Network**
 <pre><code>python test_fusion.py --config configs/fusion/replica_accuracy.yaml
-<pre><code>python test_fusion.py --config configs/fusion/replica_speed.yaml
+python test_fusion.py --config configs/fusion/replica_speed.yaml
 </code></pre>
 
 ### Evaluation
