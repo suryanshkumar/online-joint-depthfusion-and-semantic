@@ -1,0 +1,66 @@
+SETTINGS:
+  gpu: True
+  multigpu: True
+  num_workers: 8
+  experiment_path: workspace/replica/segmentation # path where the logging is done and the models are saved.
+  seed: 1911
+SEMANTIC_MODEL:
+  name: adapnet
+  stage: 2
+  n_classes: 30
+  pretrained:
+  pretrained_rgb: workspace/replica/segmentation/adapnet_rgb/model/best.pth.tar # for stage 2
+  pretrained_tof: workspace/replica/segmentation/adapnet_tof/model/best.pth.tar # for stage 2
+TRAINING:
+  train_batch_size: 8
+  train_shuffle: True
+  train_ratio: 1
+  val_batch_size: 4
+  val_shuffle: False
+  val_ratio: 1
+  n_epochs: 40
+  resume: 
+  optimizer:
+    name: sgd   # sgd, adam, asgd, adamax, adadelta, adagrad, rmsprop (choose parameters accordingly)
+    lr: 0.005
+    nesterov: True
+    momentum: 0.9
+    weight_decay: 0.0005
+  scheduler:
+    name: poly_lr   # constant_lr, poly_lr, multi_step, cosine_annealing, exp_lr (choose parameters accordingly)
+    max_iter: 50
+    #warmup_iters: 10
+    #warmup_mode: linear   # linear, constant
+    #warmup_factor: 0.2
+  loss:
+    name: 'bootstrapped_cross_entropy'  # cross_entropy, bootstrapped_cross_entropy, multi_scale_cross_entropy
+    ignore_index: -100  
+    min_K: 4096
+    loss_th: 0.5
+    weight: # file containing list of #n_class weights
+  optimization:
+    random_mask: False # randomly mask one of the encoding heads
+    mask_prob: 0.25
+TESTING:
+  test_batch_size: 1
+  test_shuffle: False
+  test_ratio: 1
+  semantic_model_path: workspace/replica/segmentation/adapnet_rgb_tof/model/best.pth.tar
+DATA:
+  root_dir: # path to replica dataset
+  dataset: Replica
+  input: tof_depth # image, tof_depth, depth_gt   # if 'image' only rgb, other choices are appended to the rgb image (list)
+  target: semantic_gt
+  semantics: class30 # class30, class40, class, instance
+  resx: 256
+  resy: 256
+  train_scene_list: lists/replica/example.txt
+  val_scene_list: lists/replica/example.txt
+  test_scene_list: lists/replica/example.txt
+  init_value: 0.1 # truncation distance
+  truncation_strategy: standard # standard, artificial or none
+  normalize: True
+  pad: 2
+  #augmentations:
+  #  hflip: 0.5
+

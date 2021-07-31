@@ -1,0 +1,76 @@
+SETTINGS:
+  gpu: True
+  num_workers: 3
+  experiment_path: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/workspace/scannet/fusion_val # path where the logging is done and the models are saved.
+  save_mode: test # make sure this is set to "test" when using test_fusion.py. Other options: ply or tsdf depending on what you want to save
+  eval_freq: 2000 # how many global steps before evaluation and saving the model
+  log_freq: 250 # how many global steps before logging the training loss
+  seed: 1911
+  implementation: standard # standard, efficient
+FUSION_MODEL:
+  name: v3
+  output_scale: 1.0
+  n_points: 9
+  n_tail_points: 7
+  growth_factor: 6
+  use_frame: True
+  use_semantics: False
+  pretrained: #
+SEMANTIC_2D_MODEL:
+  stage: 2
+  n_classes: 21
+TRAINING:
+  train_batch_size: 1
+  train_shuffle: True 
+  train_ratio: 1
+  val_batch_size: 1
+  val_shuffle: False
+  val_ratio: 1
+  n_epochs: 10
+  resume: 
+  optimizer:
+    name: rmsprop   # sgd, adam, asgd, adamax, adadelta, adagrad, rmsprop (choose parameters accordingly)
+    lr: 1.e-05
+    momentum: 0.9
+    weight_decay: 0.01
+    eps: 1.e-09
+  scheduler:
+    name: poly_lr # constant_lr, poly_lr, multi_step, step, cosine_annealing, exp_lr (choose parameters accordingly)
+    max_iter: 50000
+  loss:
+    name: fusion
+    w_l1: 1.
+    w_l2: 10
+    w_cos: 0.1
+  optimization:
+    reset_strategy: True # True or False 
+    reset_prob: 0.01 # in percent (used if reset_strategy: True)
+    clipping: True
+    accumulation_steps: 8 # note that this is normally 8
+TESTING:
+  test_batch_size: 1
+  test_shuffle: False
+  test_ratio: 1
+  outlier_filter_val: 1.
+  fusion_model_path: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/workspace/scannet/fusion/v3_nr_ns/model/best.pth.tar
+  semantic_2d_model_path: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/workspace/scannet/segmentation_20/adapnet/stage2/model/best.pth.tar
+DATA:
+  dataset: ScanNet
+  root_dir: 
+  semantics: nyu20 # nyu40, nyu20
+  semantic_strategy: predict # gt, predict, mono
+  semantic_grid: False
+  data_load_strategy: max_depth_diversity # max_depth_diversity, hybrid (Note: if X_shuffle is true, this option serves no purpose)
+  load_scenes_at_once: 1
+  intensity_grad: False # weather to load the grayscale image and its gradient and feed to the routing network
+  input: depth_gt #depth_gt
+  target: depth_gt
+  resx: 320
+  resy: 240
+  train_scene_list: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/lists/scannet/train_small.txt
+  val_scene_list: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/lists/scannet/val_small.txt
+  test_scene_list: /scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/lists/scannet/val_single.txt
+  init_value: 0.1 # truncation distance
+  truncation_strategy: standard # standard, artificial or none
+  normalize: True
+  pad: 0

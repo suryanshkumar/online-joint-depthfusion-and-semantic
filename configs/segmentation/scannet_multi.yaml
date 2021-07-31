@@ -1,0 +1,69 @@
+SETTINGS:
+  gpu: True
+  multigpu: True
+  num_workers: 8
+  experiment_path: workspace/scannet/segmentation # path where the logging is done and the models are saved.
+  seed: 1911
+SEMANTIC_MODEL:
+  name: adapnet # hardnet, adapnet
+  stage: 2
+  n_classes: 21
+  out_features: False
+  pretrained: #/scratch_net/agra/dmenini/online-semantic-3d/3rdparty/routedfusion/workspace/segmentation_30/adapnet/stage2/model/best.pth.tar
+  pretrained_rgb: # for stage 2
+  pretrained_d:  # for stage 2
+TRAINING:
+  train_batch_size: 8
+  train_shuffle: True
+  train_ratio: 4
+  val_batch_size: 8
+  val_shuffle: False
+  val_ratio: 4
+  n_epochs: 40
+  resume: # path to last model
+  optimizer:
+    name: sgd   # sgd, adam, asgd, adamax, adadelta, adagrad, rmsprop (choose parameters accordingly)
+    lr: 0.001
+    nesterov: True
+    momentum: 0.9
+    # weight_decay: 0.0005
+  scheduler:
+    name: poly_lr   # constant_lr, poly_lr, multi_step, cosine_annealing, exp_lr (choose parameters accordingly)
+    max_iter: 50
+    # warmup_iters: 10
+    # warmup_mode: 'linear'   # linear, constant
+    # warmup_factor: 0.2
+  loss:
+    name: 'bootstrapped_cross_entropy'  # cross_entropy, bootstrapped_cross_entropy, multi_scale_cross_entropy
+    ignore_index: -100
+    min_K: 4096
+    loss_th: 0.5
+    weight: #
+  optimization:
+    random_mask: False
+    mask_prob: 0.25
+TESTING:
+  test_batch_size: 1
+  test_shuffle: False
+  test_ratio: 1
+  semantic_model_path: workspace/scannet/segmentation/adapnet_rgb_depth/model/best.pth.tar
+DATA:
+  dataset: ScanNet
+  semantics: nyu20 # nyu20
+  root_dir: # path to scannet dataset
+  data_load_strategy: max_depth_diversity
+  load_scenes_at_once: 1
+  input: depth_gt # image, depth_gt   # if 'image' only rgb, other choices are appended to the rgb image (list)
+  target: semantic_gt
+  resx: 320
+  resy: 240
+  train_scene_list: lists/scannet/train.txt
+  val_scene_list: lists/scannet/val.txt
+  test_scene_list: lists/scannet/test.txt
+  init_value: 0.1 # truncation distance
+  truncation_strategy: standard # standard, artificial or none
+  normalize: True
+  pad: 2
+  # augmentations:
+  #   hflip: 0.5
+

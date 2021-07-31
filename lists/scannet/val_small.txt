@@ -1,0 +1,2 @@
+scans/scene0217_00/depth scans/scene0217_00/color scans/scene0217_00/label-filt scans/scene0217_00/pose scans/scene0217_00/intrinsic
+scans/scene0025_00/depth scans/scene0025_00/color scans/scene0025_00/label-filt scans/scene0025_00/pose scans/scene0025_00/intrinsic

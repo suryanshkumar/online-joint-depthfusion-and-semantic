@@ -1,0 +1,9 @@
+scans/scene0191_00/depth scans/scene0191_00/color scans/scene0191_00/label-filt scans/scene0191_00/pose scans/scene0191_00/intrinsic
+scans/scene0415_00/depth scans/scene0415_00/color scans/scene0415_00/label-filt scans/scene0415_00/pose scans/scene0415_00/intrinsic
+scans/scene0007_00/depth scans/scene0007_00/color scans/scene0007_00/label-filt scans/scene0007_00/pose scans/scene0007_00/intrinsic
+scans/scene0141_00/depth scans/scene0141_00/color scans/scene0141_00/label-filt scans/scene0141_00/pose scans/scene0141_00/intrinsic
+scans/scene0447_00/depth scans/scene0447_00/color scans/scene0447_00/label-filt scans/scene0447_00/pose scans/scene0447_00/intrinsic
+scans/scene0503_00/depth scans/scene0503_00/color scans/scene0503_00/label-filt scans/scene0503_00/pose scans/scene0503_00/intrinsic
+scans/scene0285_00/depth scans/scene0285_00/color scans/scene0285_00/label-filt scans/scene0285_00/pose scans/scene0285_00/intrinsic
+scans/scene0020_00/depth scans/scene0020_00/color scans/scene0020_00/label-filt scans/scene0020_00/pose scans/scene0020_00/intrinsic
+scans/scene0469_00/depth scans/scene0469_00/color scans/scene0469_00/label-filt scans/scene0469_00/pose scans/scene0469_00/intrinsic

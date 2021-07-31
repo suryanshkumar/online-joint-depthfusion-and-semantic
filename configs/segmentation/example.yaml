@@ -1,0 +1,66 @@
+SETTINGS:
+  gpu: False
+  multigpu: True
+  num_workers: 8
+  experiment_path: workspace/replica/segmentation # path where the logging is done and the models are saved.
+  seed: 1911
+SEMANTIC_MODEL:
+  name: adapnet
+  stage: # either 1 or 2
+  n_classes: 30
+  pretrained: # path to pretrained model
+  pretrained_rgb: # path to pretrained rgb encoder for stage 2
+  pretrained_tof: # path to pretrained depth encoder for stage 2
+TRAINING:
+  train_batch_size: 
+  train_shuffle: # boolean
+  train_ratio: # take one image every specified ratio
+  val_batch_size:
+  val_shuffle: # boolean
+  val_ratio: # take one image every specified ratio
+  n_epochs:
+  resume: # path to last model
+  optimizer:
+    name: # sgd, adam, asgd, adamax, adadelta, adagrad, rmsprop (choose parameters accordingly to pytorch documentation)
+    lr: 
+    # nesterov: 
+    # momentum: 
+    # weight_decay:
+  scheduler:
+    name: poly_lr # constant_lr, poly_lr, multi_step, cosine_annealing, exp_lr (choose parameters accordingly to pytorch documentation)
+    # max_iter: 
+    # warmup_iters: 10
+    # warmup_mode: linear   # linear, constant
+    # warmup_factor: 0.2
+  loss:
+    name: 'bootstrapped_cross_entropy'  # cross_entropy, bootstrapped_cross_entropy, multi_scale_cross_entropy
+    ignore_index: # default -100, else can be used to ignore 0 class ('undefined')
+    min_K: 
+    loss_th: 
+    weight: # file containing list of weights
+  optimization:
+    random_mask: # only for stage 2, randomly mask the input to one of the encoder heads
+    mask_prob:
+TESTING:
+  test_batch_size:
+  test_shuffle: # boolean
+  test_ratio: 
+  semantic_model_path: # path to semantic model
+DATA:
+  root_dir: # path to replica dataset
+  dataset: # Replica, ScanNet
+  input: # image, tof_depth, depth_gt   # if 'image' only rgb, other choices are appended to the rgb image (list)
+  target: semantic_gt
+  semantics: class30
+  resx: 256
+  resy: 256
+  train_scene_list: lists/replica/example.txt
+  val_scene_list: lists/replica/example.txt
+  test_scene_list: lists/replica/example.txt
+  init_value: 0.1 # truncation distance
+  truncation_strategy: standard # standard, artificial or none
+  normalize: True # normalize RGB 
+  pad: 2 # pad the volume to better estimate external voxels
+  augmentations: # only for RGB head
+    hflip: 0.5 # see others in utils/augmentations.py
+
