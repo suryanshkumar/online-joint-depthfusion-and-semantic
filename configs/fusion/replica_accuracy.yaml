@@ -56,7 +56,7 @@ TESTING:
 DATA:
   dataset: Replica
   root_dir: # path to replica dataset
-  semantics: class30 # class30, class40, class, instance
+  semantics: class30 # empty or class30
   semantic_strategy: predict # gt, predict, mono
   semantic_grid: True
   data_load_strategy: max_depth_diversity # max_depth_diversity, hybrid (Note: if X_shuffle is true, this option serves no purpose)

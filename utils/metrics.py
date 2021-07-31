@@ -174,7 +174,7 @@ def iou_fn(est, target, mask=None):
         fn = (est >= 0) & (target < 0)
 
     intersection = np.nansum(tp)
-    union = np.nansum(tp) + np.nansum(tp) + np.nansum(fn)
+    union = np.nansum(tp) + np.nansum(fp) + np.nansum(fn)
 
     del tp, fp, fn
     metric = intersection / (union + eps)

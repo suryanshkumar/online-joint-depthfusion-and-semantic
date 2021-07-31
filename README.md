@@ -68,6 +68,3 @@ We provide pretrained models for the multimodal AdapNet with RGB and ToF input m
 <pre><code>python test_fusion.py --config configs/fusion/replica_accuracy.yaml
 python test_fusion.py --config configs/fusion/replica_speed.yaml
 </code></pre>
-
-### Evaluation
-TODO

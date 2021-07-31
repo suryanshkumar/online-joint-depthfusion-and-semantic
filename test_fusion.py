@@ -121,22 +121,6 @@ def test_fusion(config):
 	for scene_id in database.scenes_est.keys():
 		database.save(path=test_dir, save_mode=config.SETTINGS.save_mode, scene_id=scene_id)
 
-	# compute f-score for the test scenes
-	if config.DATA.dataset == 'Replica':
-		for scene_id in database.scenes_est.keys():
-			if config.DATA.pad > 0:
-				transformation = scene_id + '_pad' + str(config.DATA.pad) + '.txt'
-			else:
-				transformation = scene_id + '.txt'
-
-			# run commandline command
-			os.chdir(test_dir)
-			if config.DATA.semantics:
-			 	os.system('evaluate_semantics.py --scene ' + scene_id + ' --semantics ' + config.DATA.semantics + ' --gt_mesh')
-			 	# to get visualization on reconstructed mesh
-			 	# os.system('evaluate_semantics.py --scene ' + scene_id + ' --semantics ' + config.DATA.semantics)
-			os.system('evaluate_3d_reconstruction.py ' + scene_id + ' watertight ' + transformation)
-
 
 if __name__ == '__main__':
 
