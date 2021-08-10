@@ -1,6 +1,8 @@
 # A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene.
 
-This is the official implementation of the RAL submission [**A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene**](link). 
+This is the official implementation of the RAL submission [**A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene**](link).
+
+This paper presents a real-time online vision framework to jointly recover an indoor scene's 3D structure and semantic label. Given noisy depth maps, a camera trajectory, and 2D semantic labels at train time, the proposed neural network learns to fuse the depth over frames with suitable semantic labels in the scene space. Our approach exploits the joint volumetric representation of the depth and semantics in the scene feature space to solve this task. For a compelling online fusion of the semantic labels and geometry in real-time, we introduce an efficient vortex pooling block while dropping the routing network in online depth fusion to preserve high-frequency surface details. We show that the context information provided by the semantics of the scene helps the depth fusion network learn noise-resistant features. Not only that, it helps overcome the shortcomings of the current online depth fusion method in dealing with thin object structures, thickening artifacts, and false surfaces. Experimental evaluation on the Replica dataset shows that our approach can perform depth fusion at 37, 10 frames per second with an average reconstruction F-score of 88\%, and 91\%, respectively, depending on the depth map resolution. Moreover, our model shows an average IoU score of 0.515 on the ScanNet 3D semantic benchmark leaderboard.
 
 If you find our code or paper useful, please consider citing
 
@@ -10,21 +12,21 @@ If you find our code or paper useful, please consider citing
 Prior to using the source code in a commercial application, please contact the authors.
 
 # Author. 
-Davide Menini (MS, ETH Zurich). This project is completed by Mr. Davide Menini for his Master Thesis.
+Davide Menini (MS, ETH Zurich). This project is completed by Mr. Davide Menini for his Master Thesis. Some parts of the code are modified from the original RoutedFusion implementation.
 
 This work was funded by Focused Research Award from Google.
 
 ## Usage
 
-Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and evaluation.
+Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and testing.
 
 ### Data Preparation
-The models are trained on our own dataset generated from Replica, from which an example scene is provided, and on ScanNet.
-To get our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
+The models are trained on our own dataset generated from Replica, from which an example scene is provided on the [project webpage](link), and on ScanNet, a standard dataset for 3D semantic evaluation.
+To get access to the rest of our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
 
 ### Installation
 
-To install our framework, you can use a conda environment.
+To install our framework, you can use a conda environment with Python 3.7 and PyTorch 1.4.0.
 
 **Clone the repo**
 
@@ -41,6 +43,10 @@ You may have to manually install dependencies in *deps/* by cd-ing into the pack
 <pre><code>pip install .
 </code></pre>
 
+You can find some prtrained model on the [project webpage](link). Download and unzip *workspace*, then place it inside the main project folder.
+
+We provide an example scene to run the tests, which again can be found on the [project webpage](link). In order to use it in the code, assign the path of data root directory (*replica*) to the *root* key in the yaml configuration file (*configs/replica*) and modify the list files in *lists/replica* to only include the downloaded scene (*example.txt* is already available).
+
 ### Training
 Once the environment is ready, you can first train the segmentation network (2 stages) and then the fusion network (either v1, v2 or v3, depending on the available resources).
 
@@ -55,7 +61,7 @@ python train_segmentation.py --config configs/segmentation/replica_multi.yaml
 </code></pre>
 
 **Change Data Configuration**
-For training out model with different hyperparameters, losses or data, you can simply modify the config file. 
+For training out model with different hyperparameters, losses or data, you can simply modify the configuration file. 
 
 ### Testing
 We provide pretrained models for the multimodal AdapNet with RGB and ToF input modalities, and 2 version of the fusion architecture, one optimized for accuracy (Fusion Network v3 with semantics enabled, 256x256 input frames, running across CPU and GPU), and one optimized for speed (Fusion Network v3 without semantics (=v2 without semantics), 128x128 input frames, running entirely on GPU).

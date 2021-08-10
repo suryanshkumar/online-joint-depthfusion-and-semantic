@@ -1,7 +1,7 @@
 import os
 
 ## ScanNet v2
-root = "/srv/beegfs02/scratch/online_semantic_3d/data/data/scannet/"
+root = # path to data root
 
 splits = ['train', 'val', 'test']
 

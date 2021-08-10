@@ -296,9 +296,9 @@ class Replica(Dataset):
 
     def get_grid(self, scene, truncation, semantic_grid):
         if self.semantics:
-            file = os.path.join(self.root_dir, scene, 'gt_semantic_sdf', self.semantics, 'sdf_' + scene + '.hdf')
+            file = os.path.join(self.root_dir, scene, 'gt_semantic_sdf', 'semantic_sdf.hdf')
         else:
-            file = os.path.join(self.root_dir, scene, 'gt_semantic_sdf', 'watertight', 'sdf_' + scene + '.hdf')
+            file = os.path.join(self.root_dir, scene, 'gt_semantic_sdf', 'sdf.hdf')
 
         # read from hdf file!
         f = h5py.File(file, 'r')
