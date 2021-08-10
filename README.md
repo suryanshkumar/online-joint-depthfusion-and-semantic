@@ -10,12 +10,14 @@ If you find our code or paper useful, please consider citing
 
 # Acknowledgment
 This work was funded by Focused Research Award from Google.
+Authors thank Silvan Weder (CVG, ETH Zurich) for useful discussion.
 
+Prior to using the source code for a commercial application, please contact the authors.
 
-Prior to using the source code in a commercial application, please contact the authors.
+# Authors.
+Davide Menini (MS, ETH Zurich), Suryansh Kumar, Martin R. Oswald, Erik Sandstrom, Cristian S, Luc Van Gool.
 
-# Author. 
-Davide Menini (MS, ETH Zurich). This project is completed by Mr. Davide Menini for his Master Thesis.
+This project is completed by Mr. Davide Menini for his Master Thesis.
 Some parts of the code are modified from the original RoutedFusion[1] implementation.
 
 <tr>
