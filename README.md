@@ -5,24 +5,34 @@ This is the official implementation of the RAL submission [**A Real-Time Online 
 This paper presents a real-time online vision framework to jointly recover an indoor scene's 3D structure and semantic label. Given noisy depth maps, a camera trajectory, and 2D semantic labels at train time, the proposed neural network learns to fuse the depth over frames with suitable semantic labels in the scene space. Our approach exploits the joint volumetric representation of the depth and semantics in the scene feature space to solve this task. For a compelling online fusion of the semantic labels and geometry in real-time, we introduce an efficient vortex pooling block while dropping the routing network in online depth fusion to preserve high-frequency surface details. We show that the context information provided by the semantics of the scene helps the depth fusion network learn noise-resistant features. Not only that, it helps overcome the shortcomings of the current online depth fusion method in dealing with thin object structures, thickening artifacts, and false surfaces. Experimental evaluation on the Replica dataset shows that our approach can perform depth fusion at 37, 10 frames per second with an average reconstruction F-score of 88\%, and 91\%, respectively, depending on the depth map resolution. Moreover, our model shows an average IoU score of 0.515 on the ScanNet 3D semantic benchmark leaderboard.
 
 If you find our code or paper useful, please consider citing
-
     @InProceedings{
     }
+
+# Acknowledgment
+This work was funded by Focused Research Award from Google.
+
 
 Prior to using the source code in a commercial application, please contact the authors.
 
 # Author. 
-Davide Menini (MS, ETH Zurich). This project is completed by Mr. Davide Menini for his Master Thesis. Some parts of the code are modified from the original RoutedFusion implementation.
+Davide Menini (MS, ETH Zurich). This project is completed by Mr. Davide Menini for his Master Thesis.
+Some parts of the code are modified from the original RoutedFusion[1] implementation.
 
-This work was funded by Focused Research Award from Google.
+<tr>
+<td>
+[1] <strong>RoutedFusion: Learning Real-time Depth Map Fusion</strong><br />
+Silvan Weder, Johannes L. Schönberger, Marc Pollefeys, Martin R. Oswald<br />
+CVPR 2020<br />
+[<a href="https://arxiv.org/abs/2001.04388" target="_blank">pdf</a>]  [<a href="https://github.com/weders/RoutedFusion" target="_blank">official code</a>] <br />
+</td>
+</tr>
 
 ## Usage
 
 Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and testing.
 
 ### Data Preparation
-The models are trained on our own dataset generated from Replica, from which an example scene is provided on the [project webpage](link), and on ScanNet, a standard dataset for 3D semantic evaluation.
-To get access to the rest of our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
+The models are trained on our own dataset generated from Replica, from which an example scene is provided on the [project webpage](link), and on ScanNet, a standard dataset for 3D semantic evaluation. To get access to the rest of our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
 
 ### Installation
 
