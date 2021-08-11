@@ -34,15 +34,26 @@ CVPR 2020<br />
 Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and testing.
 
 ### Data Preparation
-The models are trained on our own dataset generated from Replica, from which an example scene is provided on the [project webpage](link), and on ScanNet, a standard dataset for 3D semantic evaluation. To get access to the rest of our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
+The models are trained on dataset generated from Replica. For our work, we processed non-watertight mesh to watertight mesh. For 3D semantic evaluation we also provide an example on ScanNet benchmark. To get access processed example scene data, visit [project webpage](link)
 
-[2](https://arxiv.org/abs/1906.05797):
+Replica dataset[article](https://arxiv.org/abs/1906.05797):
 ```
 @article{replica19arxiv,
   title =   {The {R}eplica Dataset: A Digital Replica of Indoor Spaces},
   author =  {Julian Straub and Thomas Whelan and Lingni Ma and Yufan Chen and Erik Wijmans and Simon Green and Jakob J. Engel and Raul Mur-Artal and Carl Ren and Shobhit Verma and Anton Clarkson and Mingfei Yan and Brian Budge and Yajie Yan and Xiaqing Pan and June Yon and Yuyang Zou and Kimberly Leon and Nigel Carter and Jesus Briales and  Tyler Gillingham and  Elias Mueggler and Luis Pesqueira and Manolis Savva and Dhruv Batra and Hauke M. Strasdat and Renzo De Nardi and Michael Goesele and Steven Lovegrove and Richard Newcombe },
   journal = {arXiv preprint arXiv:1906.05797},
   year =    {2019}
+}
+```
+
+ScanNet dataset[article](https://arxiv.org/abs/1702.04405)
+```
+@inproceedings{dai2017scannet,
+  title={Scannet: Richly-annotated 3d reconstructions of indoor scenes},
+  author={Dai, Angela and Chang, Angel X and Savva, Manolis and Halber, Maciej and Funkhouser, Thomas and Nie{\ss}ner, Matthias},
+  booktitle={IEEE, CVPR},
+  pages={5828--5839},
+  year={2017}
 }
 ```
 
