@@ -34,9 +34,9 @@ CVPR 2020<br />
 Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and testing.
 
 ### Data Preparation
-The models are trained on dataset generated from Replica. For our work, we processed non-watertight mesh to watertight mesh. For 3D semantic evaluation we also provide an example on ScanNet benchmark. To get access processed example scene data, visit [project webpage](link)
+Our model is trained on dataset generated from Replica and ScanNet. For training, we processed non-watertight mesh to watertight mesh. To get access processed example scene data, visit [project webpage](link)
 
-Replica dataset[article](https://arxiv.org/abs/1906.05797):
+Replica dataset[article] (https://arxiv.org/abs/1906.05797):
 ```
 @article{replica19arxiv,
   title =   {The {R}eplica Dataset: A Digital Replica of Indoor Spaces},
@@ -46,7 +46,7 @@ Replica dataset[article](https://arxiv.org/abs/1906.05797):
 }
 ```
 
-ScanNet dataset[article](https://arxiv.org/abs/1702.04405)
+ScanNet dataset[article] (https://arxiv.org/abs/1702.04405)
 ```
 @inproceedings{dai2017scannet,
   title={Scannet: Richly-annotated 3d reconstructions of indoor scenes},
