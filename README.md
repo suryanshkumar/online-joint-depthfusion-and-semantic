@@ -36,6 +36,16 @@ Below you find instructions on how to use our framework as a 3D reconstruction a
 ### Data Preparation
 The models are trained on our own dataset generated from Replica, from which an example scene is provided on the [project webpage](link), and on ScanNet, a standard dataset for 3D semantic evaluation. To get access to the rest of our data, please contact the corresponding author (Suryansh Kumar, k.sur46@gmail.com).
 
+[2](https://arxiv.org/abs/1906.05797):
+```
+@article{replica19arxiv,
+  title =   {The {R}eplica Dataset: A Digital Replica of Indoor Spaces},
+  author =  {Julian Straub and Thomas Whelan and Lingni Ma and Yufan Chen and Erik Wijmans and Simon Green and Jakob J. Engel and Raul Mur-Artal and Carl Ren and Shobhit Verma and Anton Clarkson and Mingfei Yan and Brian Budge and Yajie Yan and Xiaqing Pan and June Yon and Yuyang Zou and Kimberly Leon and Nigel Carter and Jesus Briales and  Tyler Gillingham and  Elias Mueggler and Luis Pesqueira and Manolis Savva and Dhruv Batra and Hauke M. Strasdat and Renzo De Nardi and Michael Goesele and Steven Lovegrove and Richard Newcombe },
+  journal = {arXiv preprint arXiv:1906.05797},
+  year =    {2019}
+}
+```
+
 ### Installation
 
 To install our framework, you can use a conda environment with Python 3.7 and PyTorch 1.4.0.
