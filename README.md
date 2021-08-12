@@ -7,8 +7,26 @@ This is the official implementation of the RAL submission [**A Real-Time Online 
 </p>
 
 If you find our code or paper useful, please consider citing
-    @InProceedings{
-    }
+<tr>
+<td>
+<strong>A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes </strong><br />
+Davide Menini and Suryansh Kumar and Martin R. Oswald and Erik Sandstrom and Cristian Sminchisescu and Luc Van Gool<br />
+arXiv 2021<br />
+[<a href="https://arxiv.org/abs/2108.05246" target="_blank">pdf</a>]  [<a href="https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic" target="_blank">official code</a>] <br />
+</td>
+</tr>
+
+<b>Bibtex</b><br />
+```
+@article{menini2021realtime,
+title={A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes},
+author={Davide Menini and Suryansh Kumar and Martin R. Oswald and Erik Sandstrom and Cristian Sminchisescu and Luc Van Gool},
+year={2021},
+eprint={2108.05246},
+archivePrefix={arXiv},
+primaryClass={cs.CV}
+}
+```
 
 # Acknowledgment
 This work was funded by Focused Research Award from Google.
@@ -36,7 +54,7 @@ CVPR 2020<br />
 Below you find instructions on how to use our framework as a 3D reconstruction and semantic segmentation pipeline for training and testing.
 
 ### Data Preparation
-Our model is trained on dataset generated from Replica and ScanNet. For training, we processed non-watertight mesh to watertight mesh. To get access processed example scene data, visit [project webpage](link)
+Our model is trained on dataset generated from Replica and ScanNet. For training, we processed non-watertight mesh to watertight mesh. To get access processed example scene data, visit [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/)
 
 Replica dataset [article](https://arxiv.org/abs/1906.05797):
 ```
@@ -78,9 +96,9 @@ You may have to manually install dependencies in *deps/* by cd-ing into the pack
 <pre><code>pip install .
 </code></pre>
 
-You can find some prtrained model on the [project webpage](link). Download and unzip *workspace*, then place it inside the main project folder.
+You can find some prtrained model on the [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/). Download and unzip *workspace*, then place it inside the main project folder.
 
-We provide an example scene to run the tests, which again can be found on the [project webpage](link). In order to use it in the code, assign the path of data root directory (*replica*) to the *root* key in the yaml configuration file (*configs/replica*) and modify the list files in *lists/replica* to only include the downloaded scene (*example.txt* is already available).
+We provide an example scene to run the tests, which again can be found on the [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/). In order to use it in the code, assign the path of data root directory (*replica*) to the *root* key in the yaml configuration file (*configs/replica*) and modify the list files in *lists/replica* to only include the downloaded scene (*example.txt* is already available).
 
 ### Training
 Once the environment is ready, you can first train the segmentation network (2 stages) and then the fusion network (either v1, v2 or v3, depending on the available resources).
