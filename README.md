@@ -9,12 +9,13 @@ This is the official implementation of the RAL submission [**A Real-Time Online 
 If you find our code or paper useful, please consider citing
 <tr>
 <td>
-<strong>A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes </strong><br />
+[1] <strong>A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes </strong><br />
 Davide Menini and Suryansh Kumar and Martin R. Oswald and Erik Sandstrom and Cristian Sminchisescu and Luc Van Gool<br />
 arXiv 2021<br />
 [<a href="https://arxiv.org/abs/2108.05246" target="_blank">pdf</a>]  [<a href="https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic" target="_blank">official code</a>] <br />
 </td>
 </tr>
+<br/>
 
 <b>Bibtex</b><br />
 ```
@@ -31,18 +32,17 @@ primaryClass={cs.CV}
 # Acknowledgment
 This work was funded by Focused Research Award from Google.
 Authors thank Silvan Weder (CVG, ETH Zurich) for useful discussion.
+This project is completed by Mr. Davide Menini for his Master Thesis.
 
+Some parts of the code are modified from the original RoutedFusion [2] implementation.
 Prior to using the source code for a commercial application, please contact the authors.
 
-# Authors.
-Davide Menini (MS, ETH Zurich), Suryansh Kumar, Martin R. Oswald, Erik Sandstrom, Cristian S, Luc Van Gool.
 
-This project is completed by Mr. Davide Menini for his Master Thesis.
-Some parts of the code are modified from the original RoutedFusion[1] implementation.
-
+<br/>
+<b>Related Work</b>
 <tr>
 <td>
-[1] <strong>RoutedFusion: Learning Real-time Depth Map Fusion</strong><br />
+[2] RoutedFusion: Learning Real-time Depth Map Fusion<br />
 Silvan Weder, Johannes L. Schönberger, Marc Pollefeys, Martin R. Oswald<br />
 CVPR 2020<br />
 [<a href="https://arxiv.org/abs/2001.04388" target="_blank">pdf</a>]  [<a href="https://github.com/weders/RoutedFusion" target="_blank">official code</a>] <br />
