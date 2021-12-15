@@ -1,10 +1,15 @@
 # A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene.
 
-This is the official implementation of the RAL submission [**A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene**](https://arxiv.org/abs/2108.05246).
+This is the official implementation of our RAL 2022 paper [**A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation for Indoor Scene**](https://arxiv.org/abs/2108.05246).
 
 <p align="justify">
 <b>Abstract:</b> This paper presents a real-time online vision framework to jointly recover an indoor scene's 3D structure and semantic label. Given noisy depth maps, a camera trajectory, and 2D semantic labels at train time, the proposed neural network learns to fuse the depth over frames with suitable semantic labels in the scene space. Our approach exploits the joint volumetric representation of the depth and semantics in the scene feature space to solve this task. For a compelling online fusion of the semantic labels and geometry in real-time, we introduce an efficient vortex pooling block while dropping the routing network in online depth fusion to preserve high-frequency surface details. We show that the context information provided by the semantics of the scene helps the depth fusion network learn noise-resistant features. Not only that, it helps overcome the shortcomings of the current online depth fusion method in dealing with thin object structures, thickening artifacts, and false surfaces. Experimental evaluation on the Replica dataset shows that our approach can perform depth fusion at 37, 10 frames per second with an average reconstruction F-score of 88%, and 91%, respectively, depending on the depth map resolution. Moreover, our model shows an average IoU score of 0.515 on the ScanNet 3D semantic benchmark leaderboard.
 </p>
+
+
+Note: <b>Mr. Davide Menini</b> has contributed heavily to this repository, and
+it was later maintained and put online by me. <b>Mr. Davide Menini</b> completed 
+this project as a part of his Master's Thesis.
 
 If you find our code or paper useful, please consider citing
 <tr>
@@ -31,7 +36,7 @@ primaryClass={cs.CV}
 # Acknowledgment
 This work was funded by Focused Research Award from Google.
 Authors thank Silvan Weder (CVG, ETH Zurich) for useful discussion.
-This project is completed by Mr. Davide Menini for his Master Thesis.
+
 
 Some parts of the code are modified from the original RoutedFusion [2] implementation.
 Prior to using the source code for a commercial application, please contact the authors.
