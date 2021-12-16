@@ -7,7 +7,7 @@ This is the official implementation of our RAL 2022 paper [**A Real-Time Online 
 </p>
 
 
-Note: <b>Mr. Davide Menini</b> has contributed heavily to this repository, and
+Note: <a href="www.davidemenini.com" target="_blank"><b>Mr. Davide Menini</b></a> has contributed heavily to this repository, and
 it was later maintained and put online by me. <b>Mr. Davide Menini</b> completed 
 this project as a part of his Master's Thesis.
 
