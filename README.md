@@ -98,7 +98,7 @@ You may have to manually install dependencies in *deps/* by cd-ing into the pack
 <pre><code>pip install .
 </code></pre>
 
-You can find some prtrained model on the [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/). Download and unzip *workspace*, then place it inside the main project folder.
+You can find some pretrained model on the [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/). Download and unzip *workspace*, then place it inside the main project folder.
 
 We provide an example scene to run the tests, which again can be found on the [project webpage](https://suryanshkumar.github.io/online-joint-depthfusion-and-semantic_project_page/). In order to use it in the code, assign the path of data root directory (*replica*) to the *root* key in the yaml configuration file (*configs/replica*) and modify the list files in *lists/replica* to only include the downloaded scene (*example.txt* is already available).
 
