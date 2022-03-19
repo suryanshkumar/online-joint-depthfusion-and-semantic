@@ -15,21 +15,24 @@ If you find our code or paper useful, please consider citing
 <tr>
 <td>
 [1] <strong>A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes </strong><br />
-Authors: Davide Menini and Suryansh Kumar and Martin R. Oswald and Erik Sandstrom and Cristian Sminchisescu and Luc Van Gool,
-<b>IEEE Robotics and Automation Letter 2022</b> <br/> [<a href="https://arxiv.org/abs/2108.05246" target="_blank">pdf</a>]  [<a href="https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic" target="_blank">official code</a>] <br />
+Authors: Davide Menini, Suryansh Kumar, Martin R. Oswald, Erik Sandstrom, Cristian Sminchisescu, Luc Van Gool <br />
+IEEE Internation Conference on Robotics and Automation (<b>ICRA</b>), 2022, Philadelphia, USA.<br />
+IEEE Robotics and Automation Letter (<b>RA-L</b>) 2022. <br/> [<a href="https://arxiv.org/abs/2108.05246" target="_blank">pdf</a>]  [<a href="https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic" target="_blank">official code</a>] <br />
 </td>
 </tr>
 <br/>
 
 <b>Bibtex</b><br />
 ```
-@article{menini2021realtime,
-title={A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes},
-author={Davide Menini and Suryansh Kumar and Martin R. Oswald and Erik Sandstrom and Cristian Sminchisescu and Luc Van Gool},
-year={2021},
-eprint={2108.05246},
-archivePrefix={arXiv},
-primaryClass={cs.CV}
+@article{menini2021real,
+  title={A real-time online learning framework for joint 3d reconstruction and semantic segmentation of indoor scenes},
+  author={Menini, Davide and Kumar, Suryansh and Oswald, Martin R and Sandstr{\"o}m, Erik and Sminchisescu, Cristian and Van Gool, Luc},
+  journal={IEEE Robotics and Automation Letters},
+  volume={7},
+  number={2},
+  pages={1332--1339},
+  year={2021},
+  publisher={IEEE}
 }
 ```
 
