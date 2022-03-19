@@ -16,7 +16,7 @@ If you find our code or paper useful, please consider citing
 <td>
 [1] <strong>A Real-Time Online Learning Framework for Joint 3D Reconstruction and Semantic Segmentation of Indoor Scenes </strong><br />
 Authors: Davide Menini, Suryansh Kumar, Martin R. Oswald, Erik Sandstrom, Cristian Sminchisescu, Luc Van Gool <br />
-IEEE Internation Conference on Robotics and Automation (<b>ICRA</b>), 2022, Philadelphia, USA.<br />
+IEEE International Conference on Robotics and Automation (<b>ICRA</b>), 2022, Philadelphia, USA.<br />
 IEEE Robotics and Automation Letter (<b>RA-L</b>) 2022. <br/> [<a href="https://arxiv.org/abs/2108.05246" target="_blank">pdf</a>]  [<a href="https://github.com/suryanshkumar/online-joint-depthfusion-and-semantic" target="_blank">official code</a>] <br />
 </td>
 </tr>
